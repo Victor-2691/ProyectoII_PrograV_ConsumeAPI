@@ -1,117 +1,273 @@
 ﻿using ConsumeApis.Clases;
-using Newtonsoft.Json;
-using pruebaconsumeAPI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using CursosC;
+using pruebaconsumeAPI;
+
 
 namespace ConsumeApis.APIS
 {
     public class Api_Cursos
     {
-        private const string BaseUrl = "http://localhost:64612/api/Cursoes";
+        
+        private string URL;
+        private HttpClient cliente;
+        private string codigo;
+        public string Codigo { get => codigo; set => codigo = value; }
         public Api_Cursos()
         {
+            URL = "http://localhost:64612/api/Cursoes";
+            cliente = new HttpClient();
+            Codigo = "";
         }
-
-        public List<Cursos> ConsultaCursos()
+        public List<Curso> ObtenerCursos()
         {
-            try
+            List<Curso> datos = new List<Curso>();
+            var tarea = Task.Run
+            (
+                 async () =>
+                 {
+                     return await cliente.GetAsync(URL);
+                 }
+            );
+
+
+            HttpResponseMessage mensaje = tarea.Result;
+
+            if (mensaje.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                List<Cursos> cursos = new List<Cursos>();
-                using (var carrer = new HttpClient())
-                {
-                    var Task1 = Task.Run(async () =>
+                var tarea2 = Task<string>.Run
+                (
+                    async () =>
                     {
-                        return await carrer.GetAsync(BaseUrl);
+                        return await mensaje.Content.ReadAsStringAsync();
+                    }
+
+                );
+
+                string resultado = tarea2.Result;
+                datos = JsonConvert.DeserializeObject<List<Curso>>(resultado);
+
+
+            }
+
+            if (mensaje.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                Codigo = "404";
+
+            }
+
+            if (mensaje.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+            {
+                Codigo = "500";
+            }
+
+
+            return datos;
+        }
+        public List<Curso> FltrarCurso(string id)// se filtra por carrera
+        {
+            List<Curso> datos = new List<Curso>();
+
+            var tarea = Task.Run
+             (
+                  async () =>
+                  {
+                      return await cliente.GetAsync(URL + "?id=" + id);
+                  }
+             );
+
+
+            HttpResponseMessage mensaje = tarea.Result;
+
+            if (mensaje.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                var tarea2 = Task<string>.Run
+                (
+                    async () =>
+                    {
+                        return await mensaje.Content.ReadAsStringAsync();
+                    }
+
+                );
+
+                codigo = "200";
+                string resultado = tarea2.Result;
+                datos = JsonConvert.DeserializeObject<List<Curso>>(resultado);
+
+
+            }
+
+            if (mensaje.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                Codigo = "404";
+
+            }
+
+            if (mensaje.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+            {
+                Codigo = "500";
+            }
+
+
+            return datos;
+
+        }
+        public string NuevoCursos(Curso c)
+        {
+            string json = c.ToJson();
+
+            var tarea = Task.Run
+            (
+               async () =>
+               {
+                   return await cliente.PostAsync(URL, new StringContent(json, Encoding.UTF8, "application/json"));
+               }
+            );
+
+
+            HttpResponseMessage mensaje = tarea.Result;
+
+            if (mensaje.StatusCode == System.Net.HttpStatusCode.Created)
+            {
+                var tarea2 = Task<string>.Run
+                (
+                    async () =>
+                    {
+                        return await mensaje.Content.ReadAsStringAsync();
+                    }
+
+                );
+
+                return "201";// usuario creado
+            }
+            else
+            {
+                if (mensaje.StatusCode == System.Net.HttpStatusCode.Conflict)
+                {
+                    return "409";// conflicto (el usuario ya existe)
+
+                }
+                else
+                {
+                    if (mensaje.StatusCode == System.Net.HttpStatusCode.NotFound)
+                    {
+                        return "404";
 
                     }
-                    );
-                    HttpResponseMessage Res = Task1.Result;
-                    if (Res.StatusCode == System.Net.HttpStatusCode.OK)
+                    else
                     {
-                        var carreraResponse = Task<string>.Run(async () =>
-
+                        if (mensaje.StatusCode == System.Net.HttpStatusCode.InternalServerError)
                         {
-                            return await Res.Content.ReadAsStringAsync();
+                            return "500";/*Error interno en el servidor*/
+
+                        }
+                        else
+                        {
+                            return "";
 
                         }
 
-                        );
-
-                        string resultSrt = carreraResponse.Result;
-                        cursos = Cursos.FromJson(resultSrt);
                     }
-
-                    if (Res.StatusCode == System.Net.HttpStatusCode.NotFound)
-                    {
-                        cursos = null;
-                    }
-                    return cursos;
 
                 }
-            }
-            catch (Exception)
-            {
 
-                throw;
             }
         }
-        public string InsertarCursos(Cursos c)
+        public string ActulizarCurso(string id, Curso c)
         {
-            //Codigos de retorno del metodo
-            // 201 creado : 1
-            // 409 conflicto: 2
-            // 404 no encontrado hijo: 3
-            // BadRequest Retorna mensaje 
-            String retorno = "";
-            try
+            string json = c.ToJson();
+
+            var tarea = Task.Run
+            (
+               async () =>
+               {
+                   return await cliente.PutAsync(URL + "?id=" + id, new StringContent(json, Encoding.UTF8, "application/json"));
+               }
+            );
+
+
+            /*Obtiene la respuesta de la ap(ok,no content....)*/
+            HttpResponseMessage mensaje = tarea.Result;
+
+            if (mensaje.StatusCode == System.Net.HttpStatusCode.NoContent)
             {
-                string json = c.ToJson();
-                using (var carrer = new HttpClient())
+                var tarea2 = Task<string>.Run
+                (
+                    async () =>
+                    {
+                        return await mensaje.Content.ReadAsStringAsync();
+                    }
+
+                );
+
+                return "204";
+            }
+            else
+            {
+                if (mensaje.StatusCode == System.Net.HttpStatusCode.InternalServerError)
                 {
-                    var task1 = Task.Run(async () =>
+                    return "500";
+                }
+                else
+                {
+                    if (mensaje.StatusCode == System.Net.HttpStatusCode.Conflict)
                     {
-                        string url = BaseUrl + "/CrearCurso";
-                        return await carrer.PostAsync(url, new StringContent(json, Encoding.UTF8, "application/json")
-                        );
+                        return "409";
+                    }
+                    else
+                    {
+                        return "";
 
                     }
-                        );
-                    HttpResponseMessage Message = task1.Result;
-                    if (Message.StatusCode == System.Net.HttpStatusCode.Created)
-                    {
-                        retorno = "1";
 
-                    }
-
-                    if (Message.StatusCode == System.Net.HttpStatusCode.Conflict)
-                    {
-                        retorno = "2";
-                    }
-                    if (Message.StatusCode == System.Net.HttpStatusCode.BadRequest)
-                    {
-                        var task2 = Task<string>.Run(async () =>
-                        {
-                            return await Message.Content.ReadAsStringAsync();
-                        });
-                        string resultSrt = task2.Result;
-                        retorno = resultSrt;
-                    }
                 }
 
             }
-            catch (Exception)
-            {
 
-                throw;
+        }
+        public string EliminarCurso(string id)
+        {
+            var tarea = Task.Run
+            (
+               async () =>
+               {
+                   return await cliente.DeleteAsync(URL + "?id=" + id);
+               }
+            );
+
+            HttpResponseMessage mensaje = tarea.Result;
+
+            if (mensaje.StatusCode == System.Net.HttpStatusCode.NoContent)
+            {
+                var tarea2 = Task<string>.Run
+                (
+                    async () =>
+                    {
+                        return await mensaje.Content.ReadAsStringAsync();
+                    }
+                );
+
+                return "204";
             }
-            return retorno;
+
+            if (mensaje.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                return "404";
+
+            }
+
+            if (mensaje.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+            {
+                return "500";
+            }
+
+            return "";
         }
 
 

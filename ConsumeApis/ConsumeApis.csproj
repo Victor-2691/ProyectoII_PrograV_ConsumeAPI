@@ -51,6 +51,7 @@
     <Compile Include="Clases\Cursos.cs" />
     <Compile Include="Clases\estudianteConsulta.cs" />
     <Compile Include="Clases\estudiantes.cs" />
+    <Compile Include="Clases\Validaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

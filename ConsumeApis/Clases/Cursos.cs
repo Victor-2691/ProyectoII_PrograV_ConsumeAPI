@@ -1,15 +1,16 @@
 ﻿
-namespace ConsumeApis.Clases
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using ConsumeApis;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+namespace CursosC
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Globalization;
-    using ConsumeApis;
-    using System.Net.Http;
-    using System.Threading.Tasks;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    public partial class Cursos
+
+    public partial class Curso
     {
 
         public const string BaseUrl = "http://localhost:64612/api/Cursoes";
@@ -27,14 +28,14 @@ namespace ConsumeApis.Clases
     }
 
 
-    public partial class Cursos
+    public partial class Curso
     {
-        public static List<Cursos> FromJson(string json) => JsonConvert.DeserializeObject<List<Cursos>>(json, pruebaconsumeAPI.Converter.Settings);
+        public static List<Curso> FromJson(string json) => JsonConvert.DeserializeObject<List<Curso>>(json, pruebaconsumeAPI.Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this Cursos self) => JsonConvert.SerializeObject(self, pruebaconsumeAPI.Converter.Settings);
+        public static string ToJson(this Curso self) => JsonConvert.SerializeObject(self, pruebaconsumeAPI.Converter.Settings);
     }
 
     internal static class Converter

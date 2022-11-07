@@ -11,13 +11,13 @@
 <body>
     <form id="form1" runat="server">
         <div>
-             <h2>Ingreso de Curso Nueva </h2>
+             <h2>Ingreso de Curso Nuevo </h2>
             <br />
             <br />
               <label>Codigo de Curso</label> 
              <input type="text" id="Codigo_Curso"  placeholder="Codigo de Curso" runat="server" required="required" maxlength="10"/>  
              <br />
-            <label>Nombre de la Carrera</label>
+            <label>Nombre del Curso</label>
            <input type="text" id="Nombre_Curso"  placeholder="Nombre del Curso" runat="server" required="required" maxlength="30"/>
             <br />
             <label>Codigo de Carrera</label> 
