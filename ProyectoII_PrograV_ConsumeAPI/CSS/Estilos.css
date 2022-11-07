@@ -1,0 +1,96 @@
+﻿
+html {
+    font-size: 62.5%;
+    /*Sirve para mantener el tama;o de los elementos */
+    box-sizing: border-box;
+    /*Esta funcion es para hacer scroll de arriba abajo si quieres de derecha a izquiera eje Y*/
+}
+
+body {
+    font-size: 1rem;
+    font-family: "Krub", sans-serif;
+    /*Para hacer un degradado usamos la propiedad de image aunque no usemos la imagen como tal*/
+    /*Le inidicamos en que direccion queremos el degradado en nuestro caso de abajo hacia arriba*/
+    background-image: linear-gradient( to top, VAR(--GrisClaro) 0%, VAR(--blanco) 100% );
+}
+
+label, select {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font: Arial;
+    font-size: 15px;    
+  
+}
+
+
+
+input[type="submit"] {
+    width: 150px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+   
+}
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+input[type="date"] {
+    width: 400px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    width: 400px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+
+input[type="number"] {
+    width: 400px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 400px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  
+}
+
