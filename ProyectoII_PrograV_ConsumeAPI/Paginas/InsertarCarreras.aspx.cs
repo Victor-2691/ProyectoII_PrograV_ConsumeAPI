@@ -5,53 +5,46 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
- using ConsumeApis.APIS;
-using pruebaconsumeAPI;
 
 namespace ProyectoII_PrograV_ConsumeAPI.Paginas
 {
-
-    public partial class AgregarEstudiante : System.Web.UI.Page
+    public partial class InsertarCarreras : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void btn_GuardarEstudia_Click(object sender, EventArgs e)
+        protected void btn_GuardarCarrera_Click(object sender, EventArgs e)
         {
-            try
+       /*   try
             {
+                Api_Carreras ApiCarrara = new Api_Carreras();
 
-                Api_Estudiantecs ApiconsuemEstudiante = new Api_Estudiantecs();
-
-                estudiante NuevoEst = new estudiante()
+                Carreras NuevaC = new Carreras()
                 {
-                    Identificacion = txt_identificaci.Value,
-                    TipoId = txt_tipoId.Value,
-                    Nombre = txt_nombre.Value,
-                    PrimerApellido = txt_PrimerApellido.Value,
-                    SegundoApellido = txt_segundoApellido.Value,
-                    FechaNacimiento = txt_fecha.Value,
-                    CorreoEle = txt_Correos.Value,
-                    NumerosTelefono = txt_Numtelefonos.Value
+                    Codigo_Carrera = Codigo_Carrera.Value,
+                    Nombre_Carrera = Nombre_Carrera.Value
+
                 };
-                string codigoresulta = ApiconsuemEstudiante.insetarEstudiante(NuevoEst);
+
+
+                string codigoresulta = ApiCarrara.InsertarCarreras(NuevaC);
                 switch (codigoresulta)
                 {
                     case "1":
-                        string msg = "El estudiante se agrego con exito";
+                        string msg = "La Carrera se agrego con exito";
                         ScriptManager.RegisterStartupScript(this, GetType(),
                        "alert",
                        "alert('" + msg + "');window.location ='Default.aspx';", true);
                         Response.Redirect("Default.aspx");
-                        txt_nombre.Value = "";
-                        txt_PrimerApellido.Value = "";
+                        Codigo_Carrera.Value = "";
+                        Nombre_Carrera.Value = "";
                         break;
                     case "2":
                         ScriptManager.RegisterStartupScript(this, GetType(),
                        "alert",
-                       "alert('" + "El estudiante que esta intenta ingresar ya fue registrado" + "');window.location ='Default.aspx';", true);
+                       "alert('" + "La Carrera que esta intentando ingresar ya fue registrada" + "');window.location ='Default.aspx';", true);
                         Response.Redirect("Default.aspx");
                         break;
 
@@ -69,18 +62,22 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
 
                 string msg = ex.Message;
                 ScriptManager.RegisterStartupScript(this, GetType(),
-               "alert",
-               "alert('" + msg + "');window.location ='Default.aspx';", true);
+                       "alert",
+                       "alert('" + msg + "');window.location ='Default.aspx';", true);
 
             }
-
 
 
         }
 
         protected void Btn_Regresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Estudiante.aspx"); 
+            Response.Redirect("Carreras.aspx");*/
+        }
+
+        protected void Btn_Regresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Carreras.aspx"); 
         }
     }
 }

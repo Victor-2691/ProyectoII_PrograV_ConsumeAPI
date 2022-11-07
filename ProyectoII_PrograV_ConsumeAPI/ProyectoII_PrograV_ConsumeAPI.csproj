@@ -126,8 +126,12 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Paginas\AgregarCursos.aspx" />
     <Content Include="Paginas\AgregarEstudiante.aspx" />
+    <Content Include="Paginas\Carreras.aspx" />
+    <Content Include="Paginas\Cursos.aspx" />
     <Content Include="Paginas\Estudiantes_.aspx" />
+    <Content Include="Paginas\InsertarCarreras.aspx" />
     <Content Include="Paginas\WebForm1.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -190,6 +194,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\AgregarCursos.aspx.cs">
+      <DependentUpon>AgregarCursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\AgregarCursos.aspx.designer.cs">
+      <DependentUpon>AgregarCursos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\AgregarEstudiante.aspx.cs">
       <DependentUpon>AgregarEstudiante.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -197,12 +208,33 @@
     <Compile Include="Paginas\AgregarEstudiante.aspx.designer.cs">
       <DependentUpon>AgregarEstudiante.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Carreras.aspx.cs">
+      <DependentUpon>Carreras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Carreras.aspx.designer.cs">
+      <DependentUpon>Carreras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Cursos.aspx.cs">
+      <DependentUpon>Cursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Cursos.aspx.designer.cs">
+      <DependentUpon>Cursos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Estudiantes_.aspx.cs">
       <DependentUpon>Estudiantes_.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Paginas\Estudiantes_.aspx.designer.cs">
       <DependentUpon>Estudiantes_.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\InsertarCarreras.aspx.cs">
+      <DependentUpon>InsertarCarreras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\InsertarCarreras.aspx.designer.cs">
+      <DependentUpon>InsertarCarreras.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
