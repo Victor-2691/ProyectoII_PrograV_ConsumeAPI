@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" href="../CSS/Estilos.css" />
+            <link rel="stylesheet" href="../CSS/Estilos.css" />
     <title>Ingresa Estudiantes</title>
 </head>
 <body>
@@ -33,16 +33,16 @@
             <input type="date" id="txt_fecha"  runat="server" required="required"/>
              <br />
             <label >Correos Electrónicos</label>
-            <textarea id="txt_Correos" runat="server" placeholder="ingrese los correos electronicos" required="required">  </textarea>
+            <textarea id="txt_Correos" runat="server" placeholder="ingrese los correos electronicos" required="required"></textarea>
              <br />
             <label>  Numeros de Telefono</label>
-            <textarea id="txt_Numtelefonos" runat="server" placeholder="ingrese los numereros de telefono" required="required"> </textarea>
+            <textarea id="txt_Numtelefonos" runat="server" placeholder="ingrese los numereros de telefono" required="required"></textarea>
        
             <br />
             <asp:Button ID="btn_GuardarEstudia" runat="server" Text="Crear Estudiante" OnClick="btn_GuardarEstudia_Click" />
-                
+             <button type="reset"> Limpiar </button>
             <br />
-            <asp:Button ID="Btn_Regresar" runat="server" Text="Cancelar" OnClick="Btn_Regresar_Click" />
+          
 
 
 

@@ -40,26 +40,27 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
                 switch (codigoresulta)
                 {
                     case "1":
-                        string msg = "El estudiante se agrego con exito";
+
                         ScriptManager.RegisterStartupScript(this, GetType(),
                        "alert",
-                       "alert('" + msg + "');window.location ='Default.aspx';", true);
-                        Response.Redirect("Default.aspx");
-                        txt_nombre.Value = "";
-                        txt_PrimerApellido.Value = "";
+                       "alert('" + "Se agrego con exito" + "')", true);
+
                         break;
                     case "2":
+
                         ScriptManager.RegisterStartupScript(this, GetType(),
-                       "alert",
-                       "alert('" + "El estudiante que esta intenta ingresar ya fue registrado" + "');window.location ='Default.aspx';", true);
-                        Response.Redirect("Default.aspx");
+                        "alert",
+                        "alert('" + "El estudiante que esta intentando registrar ya existe" + "')", true);
+
+
                         break;
 
                     default:
+
                         ScriptManager.RegisterStartupScript(this, GetType(),
-                    "alert",
-                    "alert('" + codigoresulta + "');window.location ='Default.aspx';", true);
-                        Response.Redirect("Default.aspx");
+                          "alert",
+                          "alert('" + codigoresulta + "')", true);
+
                         break;
                 }
 
@@ -67,10 +68,11 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
             catch (Exception ex)
             {
 
-                string msg = ex.Message;
                 ScriptManager.RegisterStartupScript(this, GetType(),
                "alert",
-               "alert('" + msg + "');window.location ='Default.aspx';", true);
+               "alert('" + ex.Message + "')", true);
+                txt_nombre.Value = "";
+                txt_PrimerApellido.Value = "";
 
             }
 

@@ -11,7 +11,7 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
 {
 
 
-    public partial class AgregarEstudiante
+    public partial class ActualizaEstudiante
     {
 
         /// <summary>
@@ -96,12 +96,12 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
         protected global::System.Web.UI.HtmlControls.HtmlTextArea txt_Numtelefonos;
 
         /// <summary>
-        /// Control btn_GuardarEstudia.
+        /// Control btn_ActualizaEstudiante.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_GuardarEstudia;
+        protected global::System.Web.UI.WebControls.Button btn_ActualizaEstudiante;
     }
 }

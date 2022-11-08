@@ -33,7 +33,7 @@ namespace ConsumeApis
         public string SegundoApellido { get; set; }
 
         [JsonProperty("fecha_Nacimiento")]
-        public DateTimeOffset FechaNacimiento { get; set; }
+        public string FechaNacimiento { get; set; }
 
     }
 
