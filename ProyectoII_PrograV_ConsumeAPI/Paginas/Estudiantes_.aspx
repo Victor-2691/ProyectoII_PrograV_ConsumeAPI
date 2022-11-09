@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Estudiantes_.aspx.cs" Inherits="ProyectoII_PrograV_ConsumeAPI.Paginas.Estudiantes_" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Estudiantes_.aspx.cs" Inherits="ProyectoII_PrograV_ConsumeAPI.Paginas.Estudiantes_" EnableEventValidation="false"  %>
 
 <!DOCTYPE html>
 
@@ -58,7 +58,10 @@
     <form id="form1" runat="server">
         <div>
       <h1>Estudiantes</h1>
-            <asp:GridView ID="GriedvEstudiantes" runat="server" DataKeyNames="TipoId,Identificacion" OnRowDeleting="GriedvEstudiantes_RowDeleting"  >
+ 
+         <asp:HiddenField ID="Codi" runat="server"/>  
+            
+            <asp:GridView ID="GriedvEstudiantes" runat="server"  OnRowCommand="GriedvEstudiantes_RowCommand" OnSelectedIndexChanged="GriedvEstudiantes_SelectedIndexChanged" OnRowDeleting="GriedvEstudiantes_RowDeleting" >
             <FooterStyle BackColor="#CCCCCC" />
             <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" Font-Size="Smaller" HorizontalAlign="Center" VerticalAlign="Middle" Width="10px" />
             <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
@@ -68,13 +71,21 @@
             <SortedAscendingHeaderStyle BackColor="#808080" />
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#383838" />
-          <Columns>
-                <asp:CommandField HeaderText="Actualiza" ShowEditButton ="true" />
+          <Columns >
+
+                    <asp:TemplateField ShowHeader="true" >
+                        <ItemTemplate>
+
+                           <asp:Button CssClass="btnEnlace" runat="server" Text="Actualizar" CommandName="Actualiza" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>                  
+                          
+                           <asp:Button CssClass="btnEnlaceEliminar" runat="server" Text="Eliminar" CommandName="Eliminar" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" OnClientClick ="return Confirmar();"/>
+     
+                        </ItemTemplate>          
+                     </asp:TemplateField> 
                 </Columns>
-                 <Columns>
-                <asp:CommandField HeaderText="Elimina" ShowDeleteButton ="true" />
-                </Columns>
+
     </asp:GridView>
+            
         </div>
    <br />
    <br />
@@ -90,3 +101,20 @@
 
 </html>
 
+<script>
+function Confirmar() {
+
+
+    if (confirm("Esta seguro que desea eliminar este registro ?") == true) {// true indica yes
+
+        /*.getElementById se encarga de obtener los id html en aspx 
+         valor (es el id del HiddenField de c#) */
+
+        /*Se le asigna el valor con value*/
+        document.getElementById('Codi').value = 'si';
+    }
+    else {// false incia not
+        document.getElementById('Codi').value = 'no';
+    }       
+}
+</script>

@@ -78,30 +78,21 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txt_fecha;
 
         /// <summary>
-        /// Control txt_Correos.
+        /// Control Btnactualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txt_Correos;
+        protected global::System.Web.UI.WebControls.Button Btnactualizar;
 
         /// <summary>
-        /// Control txt_Numtelefonos.
+        /// Control BtnRegresar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txt_Numtelefonos;
-
-        /// <summary>
-        /// Control btn_ActualizaEstudiante.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_ActualizaEstudiante;
+        protected global::System.Web.UI.WebControls.Button BtnRegresar;
     }
 }
