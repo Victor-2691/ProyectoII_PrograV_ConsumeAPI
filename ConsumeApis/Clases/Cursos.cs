@@ -7,8 +7,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-
-namespace CosumeApis
+namespace CursosC
 {
 
     public partial class Curso
@@ -31,12 +30,12 @@ namespace CosumeApis
 
     public partial class Curso
     {
-        public static List<Curso> FromJson(string json) => JsonConvert.DeserializeObject<List<Curso>>(json, pruebaconsumeAPI.Converter.Settings);
+        public static List<Curso> FromJson(string json) => JsonConvert.DeserializeObject<List<Curso>>(json, CursosC.Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this Curso self) => JsonConvert.SerializeObject(self, pruebaconsumeAPI.Converter.Settings);
+        public static string ToJson(this Curso self) => JsonConvert.SerializeObject(self, CursosC.Converter.Settings);
     }
 
     internal static class Converter

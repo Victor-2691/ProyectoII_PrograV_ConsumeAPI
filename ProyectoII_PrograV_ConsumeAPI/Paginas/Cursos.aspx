@@ -24,6 +24,20 @@
             <SortedAscendingHeaderStyle BackColor="#808080" />
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#383838" />
+         <Columns >
+
+                    <asp:TemplateField ShowHeader="true" >
+                        <ItemTemplate>
+
+                           <asp:Button CssClass="btnEnlace" runat="server" Text="Actualizar" CommandName="Actualiza" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>                  
+                          
+                           <asp:Button CssClass="btnEnlaceEliminar" runat="server" Text="Eliminar" CommandName="Eliminar" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" OnClientClick ="return Confirmar();"/>
+     
+                        </ItemTemplate>          
+                     </asp:TemplateField> 
+                </Columns>
+
+
     </asp:GridView>
         </div>
      <br />

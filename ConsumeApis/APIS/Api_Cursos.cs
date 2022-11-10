@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using CursosC;
 using pruebaconsumeAPI;
-
+using QuickType2;
 
 namespace ConsumeApis.APIS
 {
@@ -126,7 +126,7 @@ namespace ConsumeApis.APIS
             (
                async () =>
                {
-                   return await cliente.PostAsync(URL, new StringContent(json, Encoding.UTF8, "application/json"));
+                   return await cliente.PostAsync(URL + "/CrearCurso", new StringContent(json, Encoding.UTF8, "application/json"));
                }
             );
 
@@ -179,58 +179,76 @@ namespace ConsumeApis.APIS
 
             }
         }
-        public string ActulizarCurso(string id, Curso c)
+
+
+        public string ActulizarCurso(cursoActualiza C)
         {
-            string json = c.ToJson();
-
-            var tarea = Task.Run
-            (
-               async () =>
-               {
-                   return await cliente.PutAsync(URL + "?id=" + id, new StringContent(json, Encoding.UTF8, "application/json"));
-               }
-            );
-
-
-            /*Obtiene la respuesta de la ap(ok,no content....)*/
-            HttpResponseMessage mensaje = tarea.Result;
-
-            if (mensaje.StatusCode == System.Net.HttpStatusCode.NoContent)
+            try
             {
-                var tarea2 = Task<string>.Run
+                string json = C.ToJson();
+                var cliente = new HttpClient();
+                var tarea = Task.Run
                 (
-                    async () =>
-                    {
-                        return await mensaje.Content.ReadAsStringAsync();
-                    }
-
+                   async () =>
+                   {
+                       return await cliente.PutAsync(URL, new StringContent(json, Encoding.UTF8, "application/json"));
+                   }
                 );
 
-                return "204";
-            }
-            else
-            {
-                if (mensaje.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+                HttpResponseMessage Message = tarea.Result;
+
+                if (Message.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var tarea2 = Task<string>.Run
+                    (
+                        async () =>
+                        {
+                            return await Message.Content.ReadAsStringAsync();
+                        }
+
+                    );
+
+                    return "200";
+                }
+
+                if (Message.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    return "404";
+                }
+
+                if (Message.StatusCode == System.Net.HttpStatusCode.InternalServerError)
                 {
                     return "500";
+
                 }
-                else
+
+                if (Message.StatusCode == System.Net.HttpStatusCode.BadRequest)
                 {
-                    if (mensaje.StatusCode == System.Net.HttpStatusCode.Conflict)
+                    var task2 = Task<string>.Run(async () =>
                     {
-                        return "409";
-                    }
-                    else
-                    {
-                        return "";
-
-                    }
-
+                        return await Message.Content.ReadAsStringAsync();
+                    });
+                    string resultSrt = task2.Result;
+                    return resultSrt;
                 }
+
+                return "";
+
 
             }
+            catch (Exception)
+            {
 
+                throw;
+            }
         }
+
+
+
+
+
+
+
         public string EliminarCurso(string id)
         {
             var tarea = Task.Run
@@ -259,6 +277,11 @@ namespace ConsumeApis.APIS
             if (mensaje.StatusCode == System.Net.HttpStatusCode.NotFound)
             {
                 return "404";
+
+            }
+            if (mensaje.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return "200";
 
             }
 

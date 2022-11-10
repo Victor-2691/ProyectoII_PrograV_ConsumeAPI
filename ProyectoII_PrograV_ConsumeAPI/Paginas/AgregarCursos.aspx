@@ -24,7 +24,7 @@
              <input type="text" id="Codigo_Carrera"  placeholder="Codigo de Carrera" runat="server" required="required" maxlength="10"/>  
              <br />
             <br />
-            <asp:Button ID="btn_GuardarCarrera" runat="server" Text="Crear Carrera" OnClick="btn_GuardarCarrera_Click" />
+            <asp:Button ID="btn_GuardarCarrera" runat="server" Text="Crear Curso" OnClick="btn_GuardarCarrera_Click" />
                 
             <br />
             <asp:Button ID="Btn_Regresar" runat="server" Text="Regresar" OnClick="Btn_Regresar_Click" />
