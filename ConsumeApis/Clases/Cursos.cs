@@ -7,13 +7,14 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-namespace CursosC
+
+namespace CosumeApis
 {
 
     public partial class Curso
     {
 
-        public const string BaseUrl = "http://localhost:64612/api/Cursoes";
+      
 
         [JsonProperty("Codigo_Curso")]
         public string Codigo_Curso { get; set; }

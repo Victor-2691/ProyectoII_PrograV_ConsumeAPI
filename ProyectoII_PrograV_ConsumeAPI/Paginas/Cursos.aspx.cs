@@ -19,22 +19,26 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
         public string Nombre_Curso { get; internal set; }
         public string Codigo_Carrera { get; internal set; }
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             try
             {
+                if (!Page.IsPostBack)
+                {
 
              
                 GriedvCursos.DataSource = ApiCar.ObtenerCursos();
                 GriedvCursos.DataBind();
             }
-            catch (Exception ex)
+
+
+            }
+            catch (Exception)
             {
 
-                string msg = ex.Message;
-                ScriptManager.RegisterStartupScript(this, GetType(),
-               "alert",
-               "alert('" + msg + "');window.location ='Cursos.aspx';", true);
+              
 
 
             }

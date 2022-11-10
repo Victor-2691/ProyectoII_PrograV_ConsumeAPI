@@ -31,39 +31,29 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
 
                 api_Cursos.NuevoCursos(C);
                 string codigoresulta = api_Cursos.NuevoCursos(C);
-             /*    switch (codigoresulta)
+               switch (codigoresulta)
                    {
-                       case "1":
-                           string msg = "La Carrera se agrego con exito";
+                       case "210":
                            ScriptManager.RegisterStartupScript(this, GetType(),
-                          "alert",
-                          "alert('" + msg + "');window.location ='Cursos.aspx';", true);
-                           Response.Redirect("Cursos.aspx");
-                           Codigo_Curso.Value = "";
-                           Nombre_Curso.Value = "";
-                           Codigo_Carrera.Value = "";
+                                        "alert", "alert('" + "El curso se creo con exito" + "')", true);
 
                            break;
-                       case "2":
+                       case "409":
                            ScriptManager.RegisterStartupScript(this, GetType(),
-                          "alert",
-                          "alert('" + "La Carrera que esta intentando ingresar ya fue registrada" + "');window.location ='Default.aspx';", true);
-                           Response.Redirect("Cursos.aspx");
+                                         "alert", "alert('" + "El curso ya se encuentra registrado en la BD" + "')", true);
                            break;
 
-                       default:
+
+                    case "404":
                            ScriptManager.RegisterStartupScript(this, GetType(),
-                       "alert",
-                       "alert('" + codigoresulta + "');window.location ='Cursos.aspx';", true);
-                           Response.Redirect("Cursos.aspx");
+                                   "alert", "alert('" + "La carrera que ingreso no existe, por favor modifiquela" + "')", true);
                            break;
                    }*/
 
-                if (api_Cursos.NuevoCursos(C)=="201")
-                {
+                    case "500":
                     ScriptManager.RegisterStartupScript(this, GetType(),
-                   "alert",
-                   "alert('" + "El Curso fue registrado Exitosamente" + "');window.location ='Default.aspx';", true);
+                                   "alert", "alert('" + "Error interno servidor" + "')", true);
+                        break;
 
                 }
                 if (api_Cursos.NuevoCursos(C) == "409")
@@ -72,13 +62,10 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
                    "alert",
                    "alert('" + "Conflicto con el Curso que desea ingresar" + "');window.location ='Default.aspx';", true);
 
-                }
-                if (api_Cursos.NuevoCursos(C) == "500")
-                {
+                    default:
                     ScriptManager.RegisterStartupScript(this, GetType(),
-                   "alert",
-                   "alert('" + "Error con el Servidor intente de nuevo más tarde" + "');window.location ='Default.aspx';", true);
-
+                                        "alert", "alert('" + codigoresulta + "')", true);
+                           break;
                 }
                 if (api_Cursos.NuevoCursos(C) == "404")
                 {
@@ -93,8 +80,7 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
 
                 string msg = ex.Message;
                 ScriptManager.RegisterStartupScript(this, GetType(),
-                       "alert",
-                       "alert('" + msg + "');window.location ='Cursos.aspx';", true);
+                                                   "alert", "alert('" + ex.Message + "')", true);
 
             }
 
