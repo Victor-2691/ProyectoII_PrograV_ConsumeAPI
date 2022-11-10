@@ -50,12 +50,9 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
 
         protected void GridViProfesores_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            string TipoID = "";
-            string ID = "";
-            string Nombre = "";
-            string primerApellido = "";
-            string segundApellido = "";
-            string fechaNacimiento = "";
+            string Codigo = "";
+            string Nombre_Carrera = "";
+       
 
             try
             {

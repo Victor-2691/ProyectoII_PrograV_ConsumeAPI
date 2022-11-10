@@ -19,12 +19,12 @@ namespace ConsumeApis.APIS
         {
         }
 
-        public List<Carreras> ConsultaCarreras()
+        public List<carrera> ConsultaCarreras()
         {
             try
             {
-                List<Carreras> carreras = new List<Carreras>();
-                using (var carrer = new HttpClient())
+                List<carrera> E2 = new List<carrera>();
+                using (var estudian = new HttpClient())
                 {
                     var Task1 = Task.Run(async () =>
                     {
@@ -32,27 +32,23 @@ namespace ConsumeApis.APIS
 
                     }
                     );
-                    HttpResponseMessage Res = Task1.Result;
-                    if (Res.StatusCode == System.Net.HttpStatusCode.OK)
+                    HttpResponseMessage Message = task1.Result;
+                    if (Message.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        var carreraResponse = Task<string>.Run(async () =>
-
+                        var task2 = Task<string>.Run(async () =>
                         {
-                            return await Res.Content.ReadAsStringAsync();
-
+                            return await Message.Content.ReadAsStringAsync();
+                        });
+                        string resultSrt = task2.Result;
+                        E2 = carrera.FromJson(resultSrt);
                         }
 
-                        );
-
-                        string resultSrt = carreraResponse.Result;
-                        carreras = Carreras.FromJson(resultSrt);
-                    }
-
-                    if (Res.StatusCode == System.Net.HttpStatusCode.NotFound)
+                    if (Message.StatusCode == System.Net.HttpStatusCode.NotFound)
                     {
-                        carreras = null;
+                        E2 = null;
                     }
-                    return carreras;
+                    return E2;
+                }
 
                 }
             }
@@ -62,7 +58,8 @@ namespace ConsumeApis.APIS
                 throw;
             }
         }
-        public string InsertarCarreras(Carreras c)
+
+        public string InsertarCarreras(carrera c)
         {
             //Codigos de retorno del metodo
             // 201 creado : 1

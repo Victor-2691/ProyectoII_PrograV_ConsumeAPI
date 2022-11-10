@@ -17,42 +17,39 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
 
         protected void btn_GuardarCarrera_Click(object sender, EventArgs e)
         {
-       /*   try
+            try
             {
-                Api_Carreras ApiCarrara = new Api_Carreras();
 
-                Carreras NuevaC = new Carreras()
+                Api_Carreras Apicarrera = new Api_Carreras();
+
+                carrera NuevoCarrera = new carrera()
                 {
-                    Codigo_Carrera = Codigo_Carrera.Value,
-                    Nombre_Carrera = Nombre_Carrera.Value
-
+                 NombreCarrera = txtNombre_Carrera.Value,
+                 Codigocarrera = txtCodigo_Carrera.Value  
                 };
-
-
-                string codigoresulta = ApiCarrara.InsertarCarreras(NuevaC);
+                string codigoresulta = Apicarrera.InsertarCarreras(NuevoCarrera);
                 switch (codigoresulta)
                 {
                     case "1":
-                        string msg = "La Carrera se agrego con exito";
+
                         ScriptManager.RegisterStartupScript(this, GetType(),
                        "alert",
-                       "alert('" + msg + "');window.location ='Default.aspx';", true);
-                        Response.Redirect("Default.aspx");
-                        Codigo_Carrera.Value = "";
-                        Nombre_Carrera.Value = "";
+                       "alert('" + "Se agrego con exito" + "')", true);
+
                         break;
                     case "2":
                         ScriptManager.RegisterStartupScript(this, GetType(),
                        "alert",
-                       "alert('" + "La Carrera que esta intentando ingresar ya fue registrada" + "');window.location ='Default.aspx';", true);
-                        Response.Redirect("Default.aspx");
+                        "alert('" + "El Profesor que esta intentando registrar ya existe" + "')", true);
+
+
                         break;
 
                     default:
                         ScriptManager.RegisterStartupScript(this, GetType(),
                     "alert",
-                    "alert('" + codigoresulta + "');window.location ='Default.aspx';", true);
-                        Response.Redirect("Default.aspx");
+                          "alert('" + codigoresulta + "')", true);
+
                         break;
                 }
 
@@ -60,19 +57,14 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
             catch (Exception ex)
             {
 
-                string msg = ex.Message;
                 ScriptManager.RegisterStartupScript(this, GetType(),
                        "alert",
-                       "alert('" + msg + "');window.location ='Default.aspx';", true);
+               "alert('" + ex.Message + "')", true);
+
 
             }
 
 
-        }
-
-        protected void Btn_Regresar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Carreras.aspx");*/
         }
 
         protected void Btn_Regresar_Click(object sender, EventArgs e)

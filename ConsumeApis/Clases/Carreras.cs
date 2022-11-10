@@ -18,24 +18,21 @@ namespace ConsumeApis.Clases
     using Newtonsoft.Json.Converters;
     public partial class Carreras
     {
-
-        public const string BaseUrl = "http://localhost:64612/api/Carreras";
-
-        [JsonProperty("Codigo_Carrera")]
+        [JsonProperty("codigocarrera")]
         public string Codigo_Carrera { get; set; }
 
-        [JsonProperty("Nombre_Carrera")]
+        [JsonProperty("nombreCarrera")]
         public string Nombre_Carrera { get; set; }
 
 
     }
     public partial class Carreras
     {
-        public static List<Carreras> FromJson(string json) => JsonConvert.DeserializeObject<List<Carreras>>(json, pruebaconsumeAPI.Converter.Settings);
+        public static List<Carreras> FromJson(string json) => JsonConvert.DeserializeObject<List<Carreras>>(json, ConsumeApis.Clases.Converter.Settings);
     }
     public static class SerializeC
     {
-        public static string ToJson(this Carreras self) => JsonConvert.SerializeObject(self, pruebaconsumeAPI.Converter.Settings);
+        public static string ToJson(this Carreras self) => JsonConvert.SerializeObject(self, ConsumeApis.Clases.Converter.Settings);
     }
 
     internal static class ConverterC

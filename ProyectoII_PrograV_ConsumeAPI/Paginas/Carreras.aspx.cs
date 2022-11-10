@@ -19,12 +19,12 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
             try
             {
 
-                List<Carreras> carrera = new List<Carreras>();
-
-                GriedvCarreras.DataSource = ApiCar.ConsultaCarreras();
+                    List<carrera> carrera = new List<carrera>();
+                    carrera = ApiCar.ConsultaCarreras();
+                    GriedvCarreras.DataSource = carrera;
                 GriedvCarreras.DataBind();
             }
-            catch (Exception ex)
+                catch (Exception)
             {
 
                 string msg = ex.Message;
