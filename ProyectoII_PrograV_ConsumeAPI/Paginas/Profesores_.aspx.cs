@@ -50,9 +50,12 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
 
         protected void GridViProfesores_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            string Codigo = "";
-            string Nombre_Carrera = "";
-       
+            string TipoID = "";
+            string ID = "";
+            string Nombre = "";
+            string primerApellido = "";
+            string segundApellido = "";
+            string fechaNacimiento = "";
 
             try
             {
@@ -128,7 +131,7 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
 
                             case "500":
                                 ScriptManager.RegisterStartupScript(this, GetType(),
-                                         "alert", "alert('" + "Error de servidor" + "')", true);
+                                         "alert", "alert('" + "No es valido eliminar" + "')", true);
 
                                 break;
                             default:

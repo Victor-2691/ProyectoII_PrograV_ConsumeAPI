@@ -5,6 +5,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ConsumeApis.Clases;
+using QuickType;
+using CarreraInsertar;
 
 namespace ProyectoII_PrograV_ConsumeAPI.Paginas
 {
@@ -22,7 +25,7 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
 
                 Api_Carreras Apicarrera = new Api_Carreras();
 
-                carrera NuevoCarrera = new carrera()
+              carrerainsertar NuevoCarrera = new carrerainsertar()
                 {
                  NombreCarrera = txtNombre_Carrera.Value,
                  Codigocarrera = txtCodigo_Carrera.Value  
@@ -38,16 +41,18 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
 
                         break;
                     case "2":
+
                         ScriptManager.RegisterStartupScript(this, GetType(),
-                       "alert",
-                        "alert('" + "El Profesor que esta intentando registrar ya existe" + "')", true);
+                        "alert",
+                        "alert('" + "La carrera que esta intentando registrar ya existe" + "')", true);
 
 
                         break;
 
                     default:
+
                         ScriptManager.RegisterStartupScript(this, GetType(),
-                    "alert",
+                          "alert",
                           "alert('" + codigoresulta + "')", true);
 
                         break;
@@ -58,7 +63,7 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
             {
 
                 ScriptManager.RegisterStartupScript(this, GetType(),
-                       "alert",
+               "alert",
                "alert('" + ex.Message + "')", true);
 
 
@@ -71,5 +76,7 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
         {
             Response.Redirect("Carreras.aspx"); 
         }
+
+      
     }
 }

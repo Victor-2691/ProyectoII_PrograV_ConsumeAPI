@@ -6,36 +6,35 @@
 //
 //    var welcome = Welcome.FromJson(jsonString);
 
-namespace ConsumeApis.Clases
+namespace CarreraInsertar
 {
     using System;
     using System.Collections.Generic;
+
     using System.Globalization;
-    using ConsumeApis;
-    using System.Net.Http;
-    using System.Threading.Tasks;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
-    public partial class Carreras
+
+    public partial class carrerainsertar
     {
         [JsonProperty("codigocarrera")]
-        public string Codigo_Carrera { get; set; }
+        public string Codigocarrera { get; set; }
 
         [JsonProperty("nombreCarrera")]
-        public string Nombre_Carrera { get; set; }
-
-
+        public string NombreCarrera { get; set; }
     }
-    public partial class Carreras
+
+    public partial class carrerainsertar
     {
-        public static List<Carreras> FromJson(string json) => JsonConvert.DeserializeObject<List<Carreras>>(json, ConsumeApis.Clases.Converter.Settings);
-    }
-    public static class SerializeC
-    {
-        public static string ToJson(this Carreras self) => JsonConvert.SerializeObject(self, ConsumeApis.Clases.Converter.Settings);
+        public static List<carrerainsertar> FromJson(string json) => JsonConvert.DeserializeObject<List<carrerainsertar>>(json, CarreraInsertar.Converter.Settings);
     }
 
-    internal static class ConverterC
+    public static class Serialize
+    {
+        public static string ToJson(this carrerainsertar self) => JsonConvert.SerializeObject(self, CarreraInsertar.Converter.Settings);
+    }
+
+    internal static class Converter
     {
         public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
         {

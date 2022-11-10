@@ -1,4 +1,5 @@
-﻿using ConsumeApis.APIS;
+﻿using ConsumeApis;
+using ConsumeApis.APIS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,9 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
     public partial class Cursos : System.Web.UI.Page
     {
         private Api_Cursos ApiCar = new Api_Cursos();
+       public List<Cursos> curso = new List<Cursos>();
 
+        public List<estudiante2> estudiante2s = new List<estudiante2>();
         public string Codigo_Curso { get; internal set; }
         public string Nombre_Curso { get; internal set; }
         public string Codigo_Carrera { get; internal set; }
@@ -21,8 +24,7 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
             try
             {
 
-                List<Cursos> curso = new List<Cursos>();
-
+             
                 GriedvCursos.DataSource = ApiCar.ObtenerCursos();
                 GriedvCursos.DataBind();
             }
@@ -43,8 +45,15 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
             Response.Redirect("AgregarCursos.aspx");
         }
 
-        protected void GriedvCursos_SelectedIndexChanged(object sender, EventArgs e)
+     
+
+        protected void GriedvCursos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+
+
+
+
+
 
         }
     }

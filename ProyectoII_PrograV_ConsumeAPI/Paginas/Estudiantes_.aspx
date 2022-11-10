@@ -23,13 +23,12 @@
              </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
+          <link rel="stylesheet" href="../CSS/Estilos_Prof_Est.css" />
     <title>Estudiantes</title>
+
 </head>
 
-    <header>
-      
-    </header>
-
+ 
 
 <body>
     <form id="form1" runat="server">

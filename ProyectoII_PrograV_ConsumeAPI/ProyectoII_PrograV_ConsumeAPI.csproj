@@ -129,6 +129,8 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="JavaScript\GestionOperaciones.js" />
+    <Content Include="Paginas\ActualizaCarreras.aspx" />
+    <Content Include="Paginas\ActualizaCursos.aspx" />
     <Content Include="Paginas\ActualizaEstudiante.aspx" />
     <Content Include="Paginas\ActualizaProfesor.aspx" />
     <Content Include="Paginas\AgregarCursos.aspx" />
@@ -199,6 +201,20 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\ActualizaCarreras.aspx.cs">
+      <DependentUpon>ActualizaCarreras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\ActualizaCarreras.aspx.designer.cs">
+      <DependentUpon>ActualizaCarreras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\ActualizaCursos.aspx.cs">
+      <DependentUpon>ActualizaCursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\ActualizaCursos.aspx.designer.cs">
+      <DependentUpon>ActualizaCursos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\ActualizaEstudiante.aspx.cs">
       <DependentUpon>ActualizaEstudiante.aspx</DependentUpon>

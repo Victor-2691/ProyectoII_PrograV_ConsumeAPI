@@ -11,7 +11,7 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
 {
 
 
-    public partial class Cursos
+    public partial class ActualizaCarreras
     {
 
         /// <summary>
@@ -24,30 +24,39 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control Codi.
+        /// Control txtCodigo_Carrera.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField Codi;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCodigo_Carrera;
 
         /// <summary>
-        /// Control GriedvCursos.
+        /// Control txtNombre_Carrera.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GriedvCursos;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtNombre_Carrera;
 
         /// <summary>
-        /// Control BtnAgrega.
+        /// Control btn_GuardarCarrera.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAgrega;
+        protected global::System.Web.UI.WebControls.Button btn_GuardarCarrera;
+
+        /// <summary>
+        /// Control Btn_Regresar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Regresar;
     }
 }

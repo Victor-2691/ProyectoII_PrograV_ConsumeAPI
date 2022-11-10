@@ -48,7 +48,8 @@
     <Compile Include="APIS\Api_Cursos.cs" />
     <Compile Include="APIS\Api_Estudiantecs.cs" />
     <Compile Include="APIS\Api_Profesores.cs" />
-    <Compile Include="Clases\Carreras.cs" />
+    <Compile Include="Clases\carrera.cs" />
+    <Compile Include="Clases\carrerainsertar.cs" />
     <Compile Include="Clases\Cursos.cs" />
     <Compile Include="Clases\estudianteConsulta.cs" />
     <Compile Include="Clases\estudiantes.cs" />

@@ -27,7 +27,7 @@
             <asp:Button ID="btn_GuardarCarrera" runat="server" Text="Crear Carrera" OnClick="btn_GuardarCarrera_Click" />
                 
             <br />
-            <asp:Button ID="Btn_Regresar" runat="server" Text="Cancelar" OnClick="Btn_Regresar_Click" />
+            <asp:Button ID="Btn_Regresar" runat="server" Text="Regresar" OnClick="Btn_Regresar_Click" />
 
 
 

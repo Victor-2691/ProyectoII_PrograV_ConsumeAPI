@@ -24,22 +24,22 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control Codigo_Carrera.
+        /// Control txtCodigo_Carrera.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Codigo_Carrera;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCodigo_Carrera;
 
         /// <summary>
-        /// Control Nombre_Carrera.
+        /// Control txtNombre_Carrera.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Nombre_Carrera;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtNombre_Carrera;
 
         /// <summary>
         /// Control btn_GuardarCarrera.
