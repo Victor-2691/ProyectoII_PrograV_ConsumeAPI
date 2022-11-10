@@ -51,13 +51,15 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Inicio</a></li>
-                           <li><a runat="server" href="~/Paginas/Estudiantes_.aspx">Estudiantes</a></li>
-                              <li><a runat="server" href="~/Paginas/Carreras.aspx">Carreras</a></li>
-                                   <li><a runat="server" href="~/Paginas/Cursos.aspx">Cursos</a></li>
-
-                        <li><a runat="server" href="~/About">Acerca de</a></li>
-                        <li><a runat="server" href="~/Contact">Contacto</a></li>
+                     <li><a runat="server" href="~/">Inicio</a></li>
+                      <li><a runat="server" href="~/Paginas/Estudiantes_.aspx">Estudiantes</a></li>
+                     <li><a runat="server" href="~/Paginas/Profesores_.aspx">Profesores</a></li>
+ 
+                     <li><a runat="server" href="~/Paginas/Carreras.aspx">Carreras</a></li>
+                     <li><a runat="server" href="~/Paginas/Cursos.aspx">Cursos</a></li>
+                     
+                      <li><a runat="server" href="~/About">Acerca de</a></li>
+                 
                     </ul>
                 </div>
             </div>

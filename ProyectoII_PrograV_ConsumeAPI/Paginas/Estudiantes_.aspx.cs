@@ -21,7 +21,7 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
                 try
                 {
 
-                    estudiante2s = ApiconsuemEstudiante.ConsultaEstudiantes();
+                    estudiante2s = ApiconsuemEstudiante.ListarTodosEstudiantes();
 
                     if (estudiante2s == null)
                     {
@@ -34,7 +34,7 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
                     }
                     else
                     {
-                        GriedvEstudiantes.DataSource = ApiconsuemEstudiante.ConsultaEstudiantes();
+                        GriedvEstudiantes.DataSource = estudiante2s;
                         GriedvEstudiantes.DataBind();
                     }
 
@@ -93,7 +93,7 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
                     TipoID = fila.Cells[1].Text;
                     ID = fila.Cells[2].Text;
                     List<estudiante2> DatosEstudiante = new List<estudiante2>();
-                    DatosEstudiante = ApiconsuemEstudiante.ConsultaEstudiantes();
+                    DatosEstudiante = ApiconsuemEstudiante.ListarTodosEstudiantes();
 
                     foreach (var item in DatosEstudiante)
                     {
@@ -146,7 +146,7 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
                                 ScriptManager.RegisterStartupScript(this, GetType(),
                                       "alert", "alert('" + "El estudiante se elimino con exito" + "')", true);
 
-                                GriedvEstudiantes.DataSource = ApiconsuemEstudiante.ConsultaEstudiantes();
+                                GriedvEstudiantes.DataSource = ApiconsuemEstudiante.ListarTodosEstudiantes();
                                 GriedvEstudiantes.DataBind();
                                 break;
 

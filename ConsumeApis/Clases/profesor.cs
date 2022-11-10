@@ -6,7 +6,7 @@
 //
 //    var welcome = Welcome.FromJson(jsonString);
 
-namespace pruebaconsumeAPI
+namespace ConsumeApis.APIS
 {
     using System;
     using System.Collections.Generic;
@@ -17,10 +17,10 @@ namespace pruebaconsumeAPI
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
-    public partial class estudiante
+    public partial class profesor
     {
-      
-      
+
+
         [JsonProperty("tipo_ID")]
         public string TipoId { get; set; }
 
@@ -33,29 +33,29 @@ namespace pruebaconsumeAPI
         [JsonProperty("primerApellido")]
         public string PrimerApellido { get; set; }
 
-        [JsonProperty("segundoApellido")]
+        [JsonProperty("SegundoApellido")]
         public string SegundoApellido { get; set; }
 
-        [JsonProperty("fechaNacimiento")]
+        [JsonProperty("FechaNacimiento")]
         public string FechaNacimiento { get; set; }
 
         [JsonProperty("correoEle")]
         public string CorreoEle { get; set; }
 
-        [JsonProperty("numerosTelefono")]
+        [JsonProperty("NumerosTelefono")]
         public string NumerosTelefono { get; set; }
 
     }
 
 
-    public partial class estudiante
+    public partial class profesor
     {
-        public static List<estudiante> FromJson(string json) => JsonConvert.DeserializeObject<List<estudiante>>(json, pruebaconsumeAPI.Converter.Settings);
+        public static List<profesor> FromJson(string json) => JsonConvert.DeserializeObject<List<profesor>>(json, ConsumeApis.APIS.Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this estudiante self) => JsonConvert.SerializeObject(self, pruebaconsumeAPI.Converter.Settings);
+        public static string ToJson(this profesor self) => JsonConvert.SerializeObject(self, ConsumeApis.APIS.Converter.Settings);
     }
 
     internal static class Converter
