@@ -31,5 +31,3 @@ function regresar() {
 
     window.location("~/Paginas/Cursos.aspx")
 }
-
-

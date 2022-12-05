@@ -115,6 +115,7 @@
     <Content Include="CSS\EstilosFormularios.css" />
     <Content Include="CSS\Estilos_Prof_Est.css" />
     <Content Include="CSS\Estilos.css" />
+    <Content Include="CSS\styles.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -128,18 +129,23 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="imagenes\atras %281%29.png" />
+    <Content Include="imagenes\atras.png" />
     <Content Include="JavaScript\GestionOperaciones.js" />
     <Content Include="Paginas\ActualizaCarreras.aspx" />
     <Content Include="Paginas\ActualizaCursos.aspx" />
     <Content Include="Paginas\ActualizaEstudiante.aspx" />
+    <Content Include="Paginas\actualizaperiodo.aspx" />
     <Content Include="Paginas\ActualizaProfesor.aspx" />
     <Content Include="Paginas\AgregarCursos.aspx" />
     <Content Include="Paginas\AgregarEstudiante.aspx" />
+    <Content Include="Paginas\agregarperiodo.aspx" />
     <Content Include="Paginas\AgregarProfesor.aspx" />
     <Content Include="Paginas\Carreras.aspx" />
     <Content Include="Paginas\Cursos.aspx" />
     <Content Include="Paginas\Estudiantes_.aspx" />
     <Content Include="Paginas\InsertarCarreras.aspx" />
+    <Content Include="Paginas\Periodo_Principal.aspx" />
     <Content Include="Paginas\Profesores_.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -223,6 +229,13 @@
     <Compile Include="Paginas\ActualizaEstudiante.aspx.designer.cs">
       <DependentUpon>ActualizaEstudiante.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\actualizaperiodo.aspx.cs">
+      <DependentUpon>actualizaperiodo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\actualizaperiodo.aspx.designer.cs">
+      <DependentUpon>actualizaperiodo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\ActualizaProfesor.aspx.cs">
       <DependentUpon>ActualizaProfesor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -243,6 +256,13 @@
     </Compile>
     <Compile Include="Paginas\AgregarEstudiante.aspx.designer.cs">
       <DependentUpon>AgregarEstudiante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\agregarperiodo.aspx.cs">
+      <DependentUpon>agregarperiodo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\agregarperiodo.aspx.designer.cs">
+      <DependentUpon>agregarperiodo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\AgregarProfesor.aspx.cs">
       <DependentUpon>AgregarProfesor.aspx</DependentUpon>
@@ -278,6 +298,13 @@
     </Compile>
     <Compile Include="Paginas\InsertarCarreras.aspx.designer.cs">
       <DependentUpon>InsertarCarreras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Periodo_Principal.aspx.cs">
+      <DependentUpon>Periodo_Principal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Periodo_Principal.aspx.designer.cs">
+      <DependentUpon>Periodo_Principal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Profesores_.aspx.cs">
       <DependentUpon>Profesores_.aspx</DependentUpon>

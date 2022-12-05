@@ -1,0 +1,136 @@
+﻿:root {
+    --primario: #b7d6e7;
+    --primarioOscuro: #355723;
+    --secundario: #120639;
+    --secundarioOscuro: rgb(233, 287, 2);
+    --blanco: #fff;
+    --negro: #000;
+    --Gris: #757575;
+    --GrisClaro: #dfe9f3;
+
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Globales */
+body {
+
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5rem;
+    -webkit-box-shadow: 0px 5px 17px 16px rgba(112, 112, 112, 0.46);
+    -moz-box-shadow: 0px 5px 17px 16px rgba(112, 112, 112, 0.46);
+    box-shadow: 0px 5px 17px 16px rgba(112, 112, 112, 0.46);
+    background-color: var(--GrisClaro);
+    padding: 1rem;
+    margin-top: 3rem;
+    border-radius: 4rem;
+    text-transform: uppercase;
+}
+
+.contenedor_periodos{
+    display: grid;
+    
+
+
+}
+
+.contenedor_tablaperiodos {
+    display: flex;
+    justify-content: center;
+    padding: 5rem;
+}
+
+.contenedor_btn {
+    display: flex;
+    justify-content: center;
+    padding: 5rem;
+    gap: 2rem;
+}
+
+.btnInput {
+    background-color: var(--primarioOscuro);
+    color: var(--blanco);
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    text-align: center;
+    border: none;
+}
+
+    .btnInput:hover {
+        cursor: pointer;
+        background-color: #120639;
+    }
+
+
+
+
+
+.btnGrid {
+    background-color: var(--primarioOscuro);
+    color: var(--blanco);
+    color: white;
+    padding: 6px 5px;
+    margin: 0px 3px;
+    border: none;
+    border-radius: 4px;
+}
+
+    .btnGrid:hover {
+        cursor: pointer;
+        background-color: #120639;
+    }
+
+
+
+.gridPeriodo {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1.7rem;
+    min-width: 1000px;
+  
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: var(--GrisClaro);
+    text-align: center;
+}
+
+    .gridPeriodo tr {
+        background-color: var(--GrisClaro);
+        color: #000;
+        text-align: center;
+        font-weight: normal;
+    }
+
+    .gridPeriodo th,
+    .gridPeriodo td {
+        padding: 12px 15px;
+        border: black 1px solid;
+        text-align: center;
+    }
+
+    .gridPeriodo tr {
+        border-bottom: 1px solid #dddddd;
+        border: black 1px solid;
+    }
+
+
+
+
