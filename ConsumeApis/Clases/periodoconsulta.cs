@@ -18,7 +18,7 @@ namespace claseconsume
     public partial class Periodoconsulta
     {
         [JsonProperty("anno")]
-        public long Anno { get; set; }
+        public int Anno { get; set; }
 
         [JsonProperty("fecha_Inicio")]
         public DateTimeOffset FechaInicio { get; set; }
@@ -27,7 +27,7 @@ namespace claseconsume
         public DateTimeOffset FechaFin { get; set; }
 
         [JsonProperty("numeroPeriodo")]
-        public long NumeroPeriodo { get; set; }
+        public int NumeroPeriodo { get; set; }
 
         [JsonProperty("estado")]
         public string Estado { get; set; }
