@@ -113,14 +113,13 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
                 {
                     case "200":
                         ScriptManager.RegisterStartupScript(this, GetType(),
-                              "alert", "alert('" + "El curso se actualizo con exito" + "')", true);
+                              "alert", "alert('" + "El periodo se actualizo con exito" + "')", true);
 
                         break;
 
                     case "404":
                         ScriptManager.RegisterStartupScript(this, GetType(),
-                                 "alert", "alert('" + "El curso no se encuentra en la base de datos" + "')", true);
-                        Response.Redirect("Estudiantes_.aspx");
+                                                  "alert", "alert('" + "El periodo no se encuentra" + "')", true);
                         break;
 
                     case "500":
