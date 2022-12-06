@@ -31,6 +31,8 @@
 
         <asp:DropDownList ID="DropDownListEstadoPeriodo" runat="server"></asp:DropDownList>
        <br />
+
+
              <br />
             <asp:Button ID="btn_GuardarEstudia" runat="server" Text="Crear Periodo" OnClick="btn_GuardarEstudia_Click" />
              <button type="reset"> Limpiar </button>

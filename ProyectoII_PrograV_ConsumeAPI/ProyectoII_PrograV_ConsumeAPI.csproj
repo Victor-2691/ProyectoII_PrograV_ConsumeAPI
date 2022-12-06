@@ -135,15 +135,18 @@
     <Content Include="Paginas\ActualizaCarreras.aspx" />
     <Content Include="Paginas\ActualizaCursos.aspx" />
     <Content Include="Paginas\ActualizaEstudiante.aspx" />
+    <Content Include="Paginas\ActualizaGrupos.aspx" />
     <Content Include="Paginas\actualizaperiodo.aspx" />
     <Content Include="Paginas\ActualizaProfesor.aspx" />
     <Content Include="Paginas\AgregarCursos.aspx" />
     <Content Include="Paginas\AgregarEstudiante.aspx" />
+    <Content Include="Paginas\AgregarGrupo.aspx" />
     <Content Include="Paginas\agregarperiodo.aspx" />
     <Content Include="Paginas\AgregarProfesor.aspx" />
     <Content Include="Paginas\Carreras.aspx" />
     <Content Include="Paginas\Cursos.aspx" />
     <Content Include="Paginas\Estudiantes_.aspx" />
+    <Content Include="Paginas\GruposPrincipal.aspx" />
     <Content Include="Paginas\InsertarCarreras.aspx" />
     <Content Include="Paginas\Periodo_Principal.aspx" />
     <Content Include="Paginas\Profesores_.aspx" />
@@ -229,6 +232,13 @@
     <Compile Include="Paginas\ActualizaEstudiante.aspx.designer.cs">
       <DependentUpon>ActualizaEstudiante.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\ActualizaGrupos.aspx.cs">
+      <DependentUpon>ActualizaGrupos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\ActualizaGrupos.aspx.designer.cs">
+      <DependentUpon>ActualizaGrupos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\actualizaperiodo.aspx.cs">
       <DependentUpon>actualizaperiodo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -256,6 +266,13 @@
     </Compile>
     <Compile Include="Paginas\AgregarEstudiante.aspx.designer.cs">
       <DependentUpon>AgregarEstudiante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\AgregarGrupo.aspx.cs">
+      <DependentUpon>AgregarGrupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\AgregarGrupo.aspx.designer.cs">
+      <DependentUpon>AgregarGrupo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\agregarperiodo.aspx.cs">
       <DependentUpon>agregarperiodo.aspx</DependentUpon>
@@ -291,6 +308,13 @@
     </Compile>
     <Compile Include="Paginas\Estudiantes_.aspx.designer.cs">
       <DependentUpon>Estudiantes_.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\GruposPrincipal.aspx.cs">
+      <DependentUpon>GruposPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\GruposPrincipal.aspx.designer.cs">
+      <DependentUpon>GruposPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\InsertarCarreras.aspx.cs">
       <DependentUpon>InsertarCarreras.aspx</DependentUpon>
