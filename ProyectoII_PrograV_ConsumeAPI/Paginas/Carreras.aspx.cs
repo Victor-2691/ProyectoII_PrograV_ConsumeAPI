@@ -85,8 +85,8 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
                     Codigo  = fila.Cells[1].Text;
                     Nombre = fila.Cells[2].Text;
 
-                    Response.Redirect("ActualizaCarreras.aspx?Tipoid=" + Codigo
-                        + "&Id=" + Nombre);
+                    Response.Redirect("ActualizaCarreras.aspx?Cod=" + Codigo
+                        + "&Nom=" + Nombre);
 
 
                 }

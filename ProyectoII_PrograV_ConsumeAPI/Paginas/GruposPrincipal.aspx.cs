@@ -111,6 +111,65 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
                "alert('" + msg + "')", true);
             }
 
+            try
+            {
+
+                if (e.CommandName == "Eliminar")
+                {
+                    string respuesta = Codi.Value.ToString();
+
+                    if (respuesta == "si")
+                    {
+                        int index = int.Parse(e.CommandArgument.ToString());
+                        GridViewRow fila = GridPeriodo.Rows[index];
+                        string numgrupo = fila.Cells[1].Text;
+                        string codigoC = fila.Cells[2].Text;
+                        string id = numgrupo + "_" + codigoC;
+                        string codigoretorno = Apigrupos.EliminaGrupo(id);
+
+                        switch (codigoretorno)
+                        {
+                            case "200":
+                                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "alert", "alert('" + "El grupo se elimino con exito" + "')", true);
+                                ListaGrupos = Apigrupos.ListarGrupos();
+                                GridPeriodo.DataSource = ListaGrupos;
+                                GridPeriodo.DataBind();
+                                break;
+
+                            case "404":
+                                ScriptManager.RegisterStartupScript(this, GetType(),
+                                         "alert", "alert('" + " no se encuentra en la base de datos" + "')", true);
+
+                                break;
+
+                            case "500":
+                                ScriptManager.RegisterStartupScript(this, GetType(),
+                                         "alert", "alert('" + "No es valido eliminar " + "')", true);
+
+                                break;
+                            default:
+                                ScriptManager.RegisterStartupScript(this, GetType(),
+                                         "alert", "alert('" + codigoretorno + "')", true);
+
+                                break;
+
+                        }
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                ScriptManager.RegisterStartupScript(this, GetType(),
+               "alert",
+               "alert('" + msg + "')", true);
+            }
+
+
+
 
 
 

@@ -124,8 +124,7 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
 
                     case "500":
                         ScriptManager.RegisterStartupScript(this, GetType(),
-                                 "alert", "alert('" + "Error de servidor" + "')", true);
-                        Response.Redirect("Estudiantes_.aspx");
+                                                  "alert", "alert('" + "Error de servidor" + "')", true);
                         break;
 
 

@@ -114,6 +114,119 @@ namespace ConsumeApis.APIS
             return retorno;
         }
 
+        public string ActulizaGrupo(Grupo e)
+        {
+            try
+            {
+                string json = e.ToJson();
+                var cliente = new HttpClient();
+                var tarea = Task.Run
+                (
+                   async () =>
+                   {
+                       return await cliente.PutAsync(BASE_URL, new StringContent(json, Encoding.UTF8, "application/json"));
+                   }
+                );
+
+                HttpResponseMessage Message = tarea.Result;
+
+                if (Message.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var tarea2 = Task<string>.Run
+                    (
+                        async () =>
+                        {
+                            return await Message.Content.ReadAsStringAsync();
+                        }
+
+                    );
+
+                    return "200";
+                }
+
+                if (Message.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    return "404";
+                }
+
+                if (Message.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+                {
+                    return "500";
+
+                }
+
+                if (Message.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                {
+                    var task2 = Task<string>.Run(async () =>
+                    {
+                        return await Message.Content.ReadAsStringAsync();
+                    });
+                    string resultSrt = task2.Result;
+                    return resultSrt;
+                }
+
+                return "";
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
+        public string EliminaGrupo(string id)
+        {
+            try
+            {
+
+                var cliente = new HttpClient();
+                var tarea = Task.Run
+
+                    (
+                   async () =>
+                   {
+                       return await cliente.DeleteAsync(BASE_URL + "?id=" + id);
+                   }
+                );
+
+                HttpResponseMessage mensaje = tarea.Result;
+
+                if (mensaje.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var tarea2 = Task<string>.Run
+                    (
+                        async () =>
+                        {
+                            return await mensaje.Content.ReadAsStringAsync();
+                        }
+                    );
+
+                    return "200";
+                }
+
+                if (mensaje.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    return "404";
+
+                }
+                if (mensaje.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+                {
+                    return "500";
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return "";
+
+        }
 
 
     }

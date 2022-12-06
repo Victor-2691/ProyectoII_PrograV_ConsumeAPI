@@ -43,7 +43,7 @@
         <input type="hidden" id="txt_tipoid" runat="server" />       
         <br />
          
-            <asp:Button ID="btn_GuardarEstudia" runat="server" Text="Crear Periodo" OnClick="btn_GuardarEstudia_Click" />
+            <asp:Button ID="btn_GuardarEstudia" runat="server" Text="Agregar Periodo" OnClick="btn_GuardarEstudia_Click" />
              <button type="reset"> Limpiar </button>
                <a href="GruposPrincipal.aspx"> <img src="../imagenes/atras (1).png" alt="icono" />  </a>
             <br />

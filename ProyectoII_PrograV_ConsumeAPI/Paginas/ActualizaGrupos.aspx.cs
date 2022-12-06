@@ -1,5 +1,7 @@
 ﻿using ConsumeApis.APIS;
 using ConsumeApis.Clases;
+using grupos_insertar;
+using periodos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -106,6 +108,59 @@ namespace ProyectoII_PrograV_ConsumeAPI.Paginas
 
         protected void btn_actualiza_Click(object sender, EventArgs e)
         {
+            try
+            {
+            
+                Grupo G = new Grupo()
+                {
+                   Numerogrupo = int.Parse(txt_numgrupo.Value),
+                   Codigocurso = txt_codigocurso.Value,
+                   Identificacion = txt_identifiacion.Value,
+                   Horario = DropDownListHorario.SelectedValue,
+                   Anno = int.Parse(txt_year.Value),
+                   NumeroPeriodo = int.Parse(txt_numeroperiodo.Value),
+                   TipoId = txt_tipoid.Value,
+                };
+                Api_Grupos ApiGrup = new Api_Grupos();
+
+                String CodioRespuesta = ApiGrup.ActulizaGrupo(G);
+                switch (CodioRespuesta)
+                {
+                    case "200":
+                        ScriptManager.RegisterStartupScript(this, GetType(),
+                              "alert", "alert('" + "El grupo se actualizo con exito" + "')", true);
+
+                        break;
+
+                    case "404":
+                        ScriptManager.RegisterStartupScript(this, GetType(),
+                 "alert", "alert('" + "El grupo no se encuentra" + "')", true);
+                        break;
+
+                    case "500":
+                        ScriptManager.RegisterStartupScript(this, GetType(),
+                    "alert", "alert('" + "Error de servidor" + "')", true);
+                        break;
+
+
+                    default:
+                        ScriptManager.RegisterStartupScript(this, GetType(),
+                                 "alert", "alert('" + CodioRespuesta + "')", true);
+
+                        break;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                        "alert", "alert('" + ex.Message + "')", true);
+
+            }
+
+
+
 
         }
 
