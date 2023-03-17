@@ -21,7 +21,7 @@ namespace ConsumeApis.APIS
         public string Codigo { get => codigo; set => codigo = value; }
         public Api_Cursos()
         {
-            URL = "http://localhost:64612/api/Cursoes";
+            URL = "http://www.apisprematricula.somee.com/api/Cursoes";
             cliente = new HttpClient();
             Codigo = "";
         }

@@ -14,7 +14,7 @@ namespace ConsumeApis.APIS
 {
     public class Api_Grupos
     {
-        private const string BASE_URL = "http://localhost:64612/api/Grupos";
+        private const string BASE_URL = "http://www.apisprematricula.somee.com/api/Grupos";
 
 
         public List<Gruposconsulta> ListarGrupos()
