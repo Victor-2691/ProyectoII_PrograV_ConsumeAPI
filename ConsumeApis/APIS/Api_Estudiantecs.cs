@@ -13,7 +13,7 @@ namespace ConsumeApis.APIS
 {
     public class Api_Estudiantecs
     {
-        private const string BASE_URL = "http://localhost:64612/api/Estudiantes";
+        private const string BASE_URL = "http://www.apisprematricula.somee.com/api/Estudiantes";
 
         public Api_Estudiantecs()
         {
