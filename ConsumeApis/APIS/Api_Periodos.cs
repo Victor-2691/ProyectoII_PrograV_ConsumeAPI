@@ -14,7 +14,7 @@ namespace ConsumeApis.APIS
    
    public class Api_Periodos
     {
-        private const string BASE_URL = "http://www.apisprematricula.somee.com/api/Periodoes";
+        private const string BASE_URL = "http://localhost:64612/api/Periodoes";
 
 
         public List<Periodoconsulta> ListarPeriodosOrdenados()

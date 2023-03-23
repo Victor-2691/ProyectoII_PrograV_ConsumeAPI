@@ -17,7 +17,7 @@ namespace ConsumeApis.APIS
 {
     public class Api_Carreras
     {
-        private const string BaseUrl = "http://www.apisprematricula.somee.com/api/Carreras";
+        private const string BaseUrl = "http://localhost:64612/api/Carreras";
         public Api_Carreras()
         {
         }
